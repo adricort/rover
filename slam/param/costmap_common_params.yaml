@@ -1,0 +1,12 @@
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+footprint: [[-0.400, -0.180], [-0.400, 0.180], [0.050, 0.180], [0.050, -0.180]]
+
+inflation_radius: 1.0
+cost_scaling_factor: 100.0
+
+map_type: costmap
+
+observation_sources: pointcloud_sensor
+pointcloud_sensor: {sensor_frame: camera_link, data_type: PointCloud2, topic: /voxel_cloud, marking: true, clearing: true}

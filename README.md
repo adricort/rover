@@ -12,7 +12,7 @@ More info about this package: http://wiki.ros.org/rtabmap_ros
 
 ### Instalation ###
 
-command: `git clone git@github.com:AdrianSiGmA/rovy.git**`
+command: `git clone git@github.com:AdrianSiGmA/rovy.git`
 
 ### Launching ###
 
@@ -24,3 +24,5 @@ The previous command will setup the image topic into Rviz, and will detect and l
 3. `roslaunch slam move_base.launch`
 
 The previous command will show the costmap by layering with different colors the 2D map. It will also create the global and local paths once a 2D Nav Goal is manually set on the map.
+
+4. `rosrun slam navigation_node.py`

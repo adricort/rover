@@ -14,7 +14,7 @@ More info about this package: http://wiki.ros.org/rtabmap_ros
 
 command: `git clone https://github.com/ros-planning/navigation.git`
 
-The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
+The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). In other words, creates the costmap layers and generates the path planner for autonomous navigation. It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
 
 ### 3. IntelRealSense package ### 
 
@@ -24,16 +24,19 @@ The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack tha
 
 command: `git clone git@github.com:AdrianSiGmA/rovy.git`
 
-This repository contains 4 main packages:
-1. slam: contains the navigation node
-     1. rs_camera.launch: settings for processing the data from the camera
-     2. rtabmap.launch: settings for Rviz and rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and other many parameters
-     3. settings: imu filter, template, descriptions
+This repository contains 3 main packages:
+1. slam: contains the developed navigation node
+     1. executes the slam.launch: calls the rs_camera.launch, rtabmap.launch, and the ukf_template.launch (robot_localization). It also contains some imu filter, template, and description parameters.
+     2. executes the move_base.launch: sets some topics, and runs the move_base node for the cost map and path planner
 2. realsense2_camera: contains all the parameters and nodes to receive data from the d435i
+     1. executes the rs_camera.launch: settings for processing the data from the camera
 3. qr_loc_reader: 
-4. navigation stack (optional): from https://github.com/ros-planning/navigation, it contains the move_base node, that creates the costmap and generates the path planner for autonomous navigation
 
-And, of course, the documentation, maps, images, and other useful files inside "rovy_docs".
+The rtabmap.launch that is called from the slam.launch has some settings for Rviz and Rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and many other parameters. 
+
+> :warning: It is important that, before going to the next section, one modifies this launch file by changing the rviz config to: `<arg name="rviz_cfg"                default="$(find slam)/rviz/slam.rviz" />`
+
+The documentation, maps, images, and other useful files inside "rovy_docs".
 
 ## Usage ##
 

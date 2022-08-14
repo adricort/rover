@@ -10,7 +10,7 @@ The Rtabmap package http://wiki.ros.org/rtabmap_ros is a RGB-D SLAM approach. It
 
 ### 2. The Navigation stack ###
 
-command: `git clone https://github.com/ros-planning/navigation.git`
+command (inside catkin_ws/src): `git clone https://github.com/ros-planning/navigation.git`
 
 The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). In other words, creates the costmap layers and generates the path planner for autonomous navigation. It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
 

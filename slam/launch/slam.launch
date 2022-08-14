@@ -1,4 +1,5 @@
 <launch>
+    <!-- This is a comment -->
     <arg name="offline"          default="false"/>
     <!--<arg name="map_file" default="$(find slam)/maps/map.yaml"/>--> 
 

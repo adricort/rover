@@ -25,11 +25,12 @@ The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack tha
 command: `git clone git@github.com:AdrianSiGmA/rovy.git`
 
 This repository contains 3 main packages:
-1. slam: contains the developed navigation node
-     1. executes the slam.launch: calls the rs_camera.launch, rtabmap.launch, and the ukf_template.launch (robot_localization). It also contains some imu filter, template, and description parameters.
-     2. executes the move_base.launch: sets some topics, and runs the move_base node for the cost map and path planner
-2. realsense2_camera: contains all the parameters and nodes to receive data from the d435i
-     1. executes the rs_camera.launch: settings for processing the data from the camera
+1. slam: contains the developed autonavigation node
+     1. slam.launch: calls the rs_camera.launch, rtabmap.launch, and the ukf_template.launch (robot_localization package). It also contains a setup for the Madgwick imu filter, and some description parameters (realsense2_description package).
+     2. move_base.launch: sets some topics, and runs the move_base node for the cost map and path planner
+2. realsense-ros (camera and description): contains all the parameters and nodes to receive data from the d435i
+     1. realsense2_camera: contains the rs_camera.launch, that are settings for processing the data from the camera
+     2. realsense2_description: contains the urdf and other files for drawing the module in Rviz
 3. qr_loc_reader: 
 
 The rtabmap.launch that is called from the slam.launch has some settings for Rviz and Rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and many other parameters. 

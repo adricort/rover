@@ -47,19 +47,19 @@ Some extra considerations:
 
 The previous will launch everything that is needed to already display the topics in Rviz, the pointcloud, and the grid map", and it should look something like this:
 
-<!-- ![pointcloud, grid map, and description](/docs/images/slam_launch.png) -->
+![pointcloud, grid map, and description](/docs/images/slam_launch.png)
 
 2. command: `rosrun qr_loc_reader qr_tf_broadcaster_fromimage.py`
 
 The previous command will setup the image topic into Rviz, and will detect and localize (with TF) the QR codes within the 3D map:
 
-<!-- ![QR code reader and localizer](/docs/images/qrcode_node.png) -->
+![QR code reader and localizer](/docs/images/qrcode_node.png)
 
 3. command: `roslaunch slam move_base.launch`
 
 The previous command will show the costmap by layering with different colors the 2D map (still working on the odometry and QR code localizator accuracy):
 
-<!-- ![QR code and Costmap](/docs/images/qr_and_move_base_launch.png) -->
+![QR code and Costmap](/docs/images/qr_and_move_base_launch.png)
 
 If a 2D Nav Goal is manually set on the map (directly from Rviz), it will create the global and local paths and provide the required data for navigation in a topic called /cmd_vel.
 
@@ -69,8 +69,8 @@ This will use the vector from move_base, and try to reach the goal in the map, u
 
 All together should work like the following:
 
-<!-- ![Path Planner + Autonomous Navigation](/docs/images/pathplanner_navigation.png) -->
+![Path Planner + Autonomous Navigation](/docs/images/pathplanner_navigation.png)
 
 Once it works, one cand adjust the displays for a better visualization, e.g. a space demo mission at the Deutsches Museum in Munich:
 
-<!-- ![Better visualization at a Space Demo Mission](/docs/images/demo_mission.png) -->
+![Better visualization at a Space Demo Mission](/docs/images/demo_mission.png)

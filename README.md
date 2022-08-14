@@ -2,7 +2,7 @@
 
 ## Pre-requisites ##
 
-### 1. Real-Time Appearance-Based Mapping Package ###
+### 1. Real-Time Appearance-Based Mapping package ###
 
 command: `sudo apt-get install ros-melodic-rtabmap-ros`
 
@@ -10,17 +10,17 @@ The Rtabmap package is a RGB-D SLAM approach. This is used to generate a 3D poin
 
 More info about this package: http://wiki.ros.org/rtabmap_ros
 
-### 2. The Navigation Stack ###
+### 2. The Navigation stack ###
 
 command: `git clone https://github.com/ros-planning/navigation.git`
 
 The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
 
-### 3. IntelRealSense Package ### 
+### 3. IntelRealSense package ### 
 
-> :warning: **Please, check if you already have realsense2 package installed**: it might colapse with some features here. It is important to remove it and get it from this repo and not from the original source https://github.com/IntelRealSense/realsense-ros since it is modified to work with this project.
+> :warning: **Please, check if you already have realsense2 package installed**: it might colapse with some features of this repo (e.g. Rviz). It is essential to remove it and to get it from this repo and not from the original source https://github.com/IntelRealSense/realsense-ros since it has been modified to work for this rover project.
 
-### Instalation ###
+### 4. Installation of the full Rover stack ###
 
 command: `git clone git@github.com:AdrianSiGmA/rovy.git`
 

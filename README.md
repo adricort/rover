@@ -75,4 +75,6 @@ Once everything is launched, one can adjust the displays for a better visualizat
 
 ![Better visualization at a Space Demo Mission](/docs/images/demo_mission.png)
 
+Organizing packages and launch files is still in progress. Many updates and improvements will be done in the coming months.
+
 Have fun!

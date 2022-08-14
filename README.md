@@ -10,7 +10,7 @@ The Rtabmap package is a RGB-D SLAM approach. This is used to generate a 3D poin
 
 More info about this package: http://wiki.ros.org/rtabmap_ros
 
-### 2. Real-Time Appearance-Based Mapping Package ###
+### 2. The Navigation Stack ###
 
 command: `git clone https://github.com/ros-planning/navigation.git`
 

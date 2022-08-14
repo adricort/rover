@@ -20,7 +20,7 @@ This repository contains 4 main packages:
 3. realsense2_camera: 
 4. slam: contains the navigation node
 	i. rs_camera.launch: settings for processing the data from the camera
-	ii. rtabmap.launch: settings for Rviz and rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and other many parameters.
+	ii. rtabmap.launch: settings for Rviz and rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and other many parameters
 	iii. 
 
 And, of course, the documentation, maps, images, and other useful files inside "rovy_docs".

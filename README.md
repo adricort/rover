@@ -39,7 +39,7 @@ Some extra considerations:
 
 > :warning: It is important that, before going to the next section, one modifies this launch file by changing the rviz config (around line 37) to: `<arg name="rviz_cfg"                default="$(find slam)/rviz/slam.rviz" />`
 
-- The documentation, maps, images, and other useful files inside "rovy_docs".
+- The documentation, maps, images, and other useful files inside "docs".
 
 ## Usage ##
 

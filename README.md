@@ -63,7 +63,7 @@ The previous command will show the costmap by layering with different colors (st
 
 If a 2D Nav Goal is manually set on the map (directly from Rviz), it will create the global and local paths and provide the required data for navigation in a topic called /cmd_vel.
 
-4. terminal 4 (not needed for the Rovy project): `rosrun slam navigation_node.py`
+4. terminal 4 (not needed for rovy): `rosrun slam navigation_node.py`
 
 This will use the vector from move_base, and will try to reach the goal in the map by using specific protocol-commands for the microcontroller to the locomotion (depending on the robot).
 

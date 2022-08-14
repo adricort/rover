@@ -14,7 +14,7 @@ More info about this package: http://wiki.ros.org/rtabmap_ros
 
 The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
 
-> :warning: **Please, check if you already have realsense2 package installed**: it might colapse with some features here. It is important to remove it and get it from this repo and not from the original source https://github.com/IntelRealSense/realsense-ros since it is modified to work with this project.
+3. > :warning: **Please, check if you already have realsense2 package installed**: it might colapse with some features here. It is important to remove it and get it from this repo and not from the original source https://github.com/IntelRealSense/realsense-ros since it is modified to work with this project.
 
 ### Instalation ###
 
@@ -31,7 +31,7 @@ This repository contains 4 main packages:
 
 And, of course, the documentation, maps, images, and other useful files inside "rovy_docs".
 
-### Launching ###
+## Usage ##
 
 1. `roslaunch slam slam.launch`
 

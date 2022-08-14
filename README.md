@@ -37,22 +37,22 @@ Some extra considerations:
 
 - The rtabmap.launch that is called from the slam.launch has some settings for Rviz and Rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and many other parameters. 
 
-> :warning: It is important that, before going to the next section, one modifies this launch file by changing the rviz config to: `<arg name="rviz_cfg"                default="$(find slam)/rviz/slam.rviz" />`
+> :warning: It is important that, before going to the next section, one modifies this launch file by changing the rviz config (around line 37) to: `<arg name="rviz_cfg"                default="$(find slam)/rviz/slam.rviz" />`
 
-The documentation, maps, images, and other useful files inside "rovy_docs".
+- The documentation, maps, images, and other useful files inside "rovy_docs".
 
 ## Usage ##
 
-1. `roslaunch slam slam.launch`
+1. command: `roslaunch slam slam.launch`
 
-The previous command will launch the rs_camera.launch that is from the realsense2_camera package from Intel Realsense, for the D435i depth camera. In addition, an madgwick- imu filter is run as a node. The already explained rtabmap.launch from the rtabmap_ros package is executed (generates poincloud and occupancy with a SLAM approach), it is important to mention that, within this rtabmap launch file, Rviz is settup and run. Furthermore, in this slam launch file, some other parameters are given, such as robot descriptions, imu settings, and a template for robot localization. 
+The previous will launch everything that is needed to already display the topics in Rviz, the pointcloud, and the grid map.
 
-2. `rosrun qr_loc_reader qr_tf_broadcaster_fromimage.py`
+2. command: `rosrun qr_loc_reader qr_tf_broadcaster_fromimage.py`
 
 The previous command will setup the image topic into Rviz, and will detect and localize (with TF) the QR codes within the 3D map.
 
-3. `roslaunch slam move_base.launch`
+3. command: `roslaunch slam move_base.launch`
 
 The previous command will show the costmap by layering with different colors the 2D map. It will also create the global and local paths once a 2D Nav Goal is manually set on the map.
 
-4. `rosrun slam navigation_node.py`
+4. command: `rosrun slam navigation_node.py`

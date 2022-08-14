@@ -45,19 +45,19 @@ Some extra considerations:
 
 1. command: `roslaunch slam slam.launch`
 
-The previous will launch everything that is needed to already display the topics in Rviz, the pointcloud, and the grid map", and it should look something like this:
+The previous will launch everything that is needed to already display the topics in Rviz, the pointcloud, and the grid map (2D map), and it should look something like the following:
 
 ![pointcloud, grid map, and description](/docs/images/slam_launch.png)
 
 2. command: `rosrun qr_loc_reader qr_tf_broadcaster_fromimage.py`
 
-The previous command will setup the image topic into Rviz, and will detect and localize (with TF) the QR codes within the 3D map:
+The previous command will setup the image topic into Rviz, and will detect with a pink square and localize (with TF) the QR codes within the 3D map:
 
 ![QR code reader and localizer](/docs/images/qrcode_node.png)
 
 3. command: `roslaunch slam move_base.launch`
 
-The previous command will show the costmap by layering with different colors the 2D map (still working on the odometry and QR code localizator accuracy):
+The previous command will show the costmap by layering with different colors (still working on the odometry and QR code localizator accuracy):
 
 ![QR code and Costmap](/docs/images/qr_and_move_base_launch.png)
 
@@ -65,12 +65,14 @@ If a 2D Nav Goal is manually set on the map (directly from Rviz), it will create
 
 4. command: `rosrun slam navigation_node.py`
 
-This will use the vector from move_base, and try to reach the goal in the map, using specific protocol-commands for the microcontroller to the locomotion (depending on the robot).
+This will use the vector from move_base, and will try to reach the goal in the map by using specific protocol-commands for the microcontroller to the locomotion (depending on the robot).
 
-All together should work like the following:
+All together should look like the following:
 
 ![Path Planner + Autonomous Navigation](/docs/images/pathplanner_navigation.png)
 
-Once it works, one cand adjust the displays for a better visualization, e.g. a space demo mission at the Deutsches Museum in Munich:
+Once everything is launched, one can adjust the displays for a better visualization even if the costmap and the navigation are still working, e.g. a space demo mission at the Deutsches Museum in Munich:
 
 ![Better visualization at a Space Demo Mission](/docs/images/demo_mission.png)
+
+Have fun!

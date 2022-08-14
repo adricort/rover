@@ -1,27 +1,33 @@
-# How to use this package #
+# How to use the packages #
 
 ## Pre-requisites ##
 
 ### Real-Time Appearance-Based Mapping Package ###
 
-command: `sudo apt-get install ros-melodic-rtabmap-ros`
+1. command: `sudo apt-get install ros-melodic-rtabmap-ros`
 
 The Rtabmap package is a RGB-D SLAM approach. This is used to generate a 3D pointcloud of the occupancy and/or to create a 2D occupancy grid map for navigation.
 
 More info about this package: http://wiki.ros.org/rtabmap_ros
+
+2. command: `git clone https://github.com/ros-planning/navigation.git`
+
+The navigation stack http://wiki.ros.org/navigation is a 2D navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base (we will be using the move_base node). It is important to be cloned in your main workspace and not in your opt/ros/noetic/share directory (sudo apt-get inst...), or at least, this is how it worked for me.
+
+> :warning: **Please, check if you already have realsense2 package installed**: it might colapse with some features here. It is important to remove it and get it from this repo and not from the original source https://github.com/IntelRealSense/realsense-ros since it is modified to work with this project.
 
 ### Instalation ###
 
 command: `git clone git@github.com:AdrianSiGmA/rovy.git`
 
 This repository contains 4 main packages:
-1. navigation: 
-2. qr_loc_reader: 
-3. realsense2_camera: contains all the parameters and nodes to receive data from the d435i
-4. slam: contains the navigation node
+1. slam: contains the navigation node
      1. rs_camera.launch: settings for processing the data from the camera
      2. rtabmap.launch: settings for Rviz and rtabmapviz, cfg files, depth and stereo, odometry?, RGB-D, pointcloud, SLAM, and other many parameters
      3. settings: imu filter, template, descriptions
+2. realsense2_camera: contains all the parameters and nodes to receive data from the d435i
+3. qr_loc_reader: 
+4. navigation stack (optional): from https://github.com/ros-planning/navigation, it contains the move_base node, that creates the costmap and generates the path planner for autonomous navigation
 
 And, of course, the documentation, maps, images, and other useful files inside "rovy_docs".
 

@@ -4,7 +4,7 @@
 
 ### 1. Real-Time Appearance-Based Mapping package ###
 
-command: `sudo apt-get install ros-melodic-rtabmap-ros`
+command: `sudo apt-get install ros-noetic-rtabmap-ros`
 
 The Rtabmap package http://wiki.ros.org/rtabmap_ros is a RGB-D SLAM approach. It is used to generate a 3D pointcloud of the occupancy and/or to create a 2D occupancy grid map for navigation.
 
